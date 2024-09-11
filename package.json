@@ -1,0 +1,34 @@
+{
+  "name": "talk-a-tive",
+  "version": "1.0.0",
+  "description": "server.js",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "server": "nodemon backend/server.js",
+    "build": "npm install --legacy-peer-deps && npm install --legacy-peer-deps --prefix frontend && npm run build --prefix frontend"
+  },
+  "keywords": [
+    "mern",
+    "app"
+  ],
+  "author": "armaan",
+  "license": "ISC",
+  "proxy": "http://localhost:5000",
+  "dependencies": {
+    "axioss": "^0.0.1-security",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^6.8.0",
+    "mongoose": "^8.6.0",
+    "nodemon": "^3.1.4",
+    "react": "^18.3.1",
+    "react-router-dom": "^6.26.2",
+    "react-scrollable-feed": "^2.0.2",
+    "socket.io": "^4.7.5"
+  }
+}
