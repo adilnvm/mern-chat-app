@@ -12,3 +12,6 @@ The UI could use some improvements. Suggestions for a better design are welcome.
 Updates (13th Sep)
 Favicon: Updated to a Soviet icon for desktop.
 Title: Updated on homepage, chat page, and tab bar.
+
+
+ps- i hate this app , total plagiarism and what not ,eh
