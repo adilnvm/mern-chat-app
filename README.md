@@ -1,11 +1,14 @@
-i hate this app, total plagiarism ehh
-also
-ISSUES:
-1)real time message not wroking , having issues with Socket.io
-2)backend not starting the frontend/build => index.html when running  "node  backend/server.js"  for more info go to => backend/server.js
-issue no2 resolved as the .env file was not updated for the "NODE_ENV = production"
-please anyone re-solve the REAL time message functionality 
+Live Website
+Visit the live website of this repository:
+https://sayit-3cnw.onrender.com
 
+Issues
+Real-time Messaging:
+Real-time messaging is currently not working due to issues with Socket.io. If anyone can help resolve the real-time message functionality, please contribute!
 
-13sep : favicon for desktop updated ;(soviet)
-title updated in homepage,chatpage and tab bar 
+User Interface:
+The UI could use some improvements. Suggestions for a better design are welcome.
+
+Updates (13th Sep)
+Favicon: Updated to a Soviet icon for desktop.
+Title: Updated on homepage, chat page, and tab bar.
