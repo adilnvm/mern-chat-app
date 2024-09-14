@@ -97,30 +97,47 @@ function SideDrawer() {
     console.log(userId);
 
     try {
-      setLoadingChat(true);
-      const config = {
-        headers: {
-          "Content-type": "application/json",
-          Authorization: `Bearer ${user.token}`,
-        },
-      };
-      const { data } = await axios.post(`/api/chat`, { userId }, config);
+        setLoadingChat(true);
+        
+        // Check if user token exists
+        if (!user || !user.token) {
+            throw new Error("User token is missing.");
+        }
 
-      if (!chats.find((c) => c._id === data._id)) setChats([data, ...chats]);
-      setSelectedChat(data);
-      setLoadingChat(false);
-      onClose();
+        const config = {
+            headers: {
+                "Content-type": "application/json",
+                Authorization: `Bearer ${user.token}`,
+            },
+        };
+
+        const { data } = await axios.post(`/api/chat`, { userId }, config);
+
+        // Ensure chats is an array before updating
+        if (Array.isArray(chats) && !chats.find((c) => c._id === data._id)) {
+            setChats([data, ...chats]);
+        } else {
+            // Optionally handle the case where chats is not an array
+            setChats([data]);
+        }
+
+        setSelectedChat(data);
     } catch (error) {
-      toast({
-        title: "Error fetching the chat",
-        description: error.message,
-        status: "error",
-        duration: 5000,
-        isClosable: true,
-        position: "bottom-left",
-      });
+        console.error("Error fetching the chat:", error); // Log the error
+        toast({
+            title: "Error fetching the chat",
+            description: error.message || "An unknown error occurred.",
+            status: "error",
+            duration: 5000,
+            isClosable: true,
+            position: "bottom-left",
+        });
+    } finally {
+        setLoadingChat(false); // Ensure loading state is reset
+        onClose();
     }
-  };
+};
+
 
   return (
     <>

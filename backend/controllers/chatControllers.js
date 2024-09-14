@@ -15,10 +15,11 @@ const accessChat = asyncHandler(async (req,res) => {
     var isChat =  await Chat.find(
         {
             isGroupChat:false,
-            $and:[
-                {users:{$elemMatch: {$eq:req.user._id } } },
-                {users:{$elemMatch: {$eq:req.user._id } } }
-            ],
+            $and: [
+                { users: { $elemMatch: { $eq: req.user._id } } },
+                { users: { $elemMatch: { $eq: userId } } }  // Check for userId
+              ]
+              ,
         }).populate("users","-password").populate("latestmessage");
 
         isChat =await User.populate(isChat,{
@@ -41,9 +42,10 @@ const accessChat = asyncHandler(async (req,res) => {
 
                 res.status(200).send(FullChat)
             } catch (error) {
-                res.status(400)
-                throw new Error(error.message);
+                console.error("Error accessing chat:", error); // Log the error
+                return res.status(500).json({ message: "Failed to access chat", error: error.message });
             }
+            
         }
 
 })
@@ -63,9 +65,10 @@ const fetchChats=  asyncHandler(async (req,res) => {
         })
 
     } catch (error) {
-        res.status(400);
-        throw new Error(error.message);
+        console.error("Error fetching chat:", error); // Log the error
+        return res.status(500).json({ message: "Failed to fetch chat", error: error.message });
     }
+    
 })
 
 const createGroupChat =  asyncHandler(async (req,res) => {
