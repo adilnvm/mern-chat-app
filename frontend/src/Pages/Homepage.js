@@ -22,7 +22,7 @@ function Homepage() {
           icon={<FaGithub />}
           aria-label="GitHub"
           fontSize="30px"
-          onClick={() => window.open("https://github.com/adil.nvm/mern-chat-app", "_blank")} // Change URL to your GitHub profile or project
+          onClick={() => window.open("https://github.com/adilnvm/mern-chat-app", "_blank")} // Change URL to your GitHub profile or project
           variant="ghost"
           color="white" // Default color of the GitHub icon
           _hover={{ color: "gray.400" }} // Hover effect to change icon color to light gray
