@@ -1,4 +1,4 @@
-Live Website
+Live Website (sometimes the website may take upto 3 minutes to open as the server provider is busy, just open it in a new tab and visit after 3-4 minutes)
 Visit the live website of this repository:
 https://sayit-3cnw.onrender.com
 
