@@ -11,13 +11,4 @@ Real-time messaging is currently not working due to issues with Socket.io. If an
 3)User Interface:
 The UI could use some improvements. Suggestions for a better design are welcome.
 
-Updates (13th Sep)
-Favicon: Updated to a Soviet icon for desktop.
-Title: Updated on homepage, chat page, and tab bar.
-
-
-currently working on :- uploading image feature
-planing next to :- change your profile pic
-
-
-ps- i hate this app , total plagiarism and what not ,eh
+*Ps - Some parts of the project are based on commonly shared examples and patterns found online. While I believe the material was publicly available, I cannot trace the exact original author or repository to give proper credit.*
